@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       if (!question1){<PlasticUse setQuestion1={setQuestion1} />}
-      <Transportation />
+      else if() <Transportation />
     </div>
   );
 }
