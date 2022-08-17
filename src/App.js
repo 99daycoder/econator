@@ -1,8 +1,12 @@
+
 import logo from "./logo.svg";
 import "./App.css";
 import PlasticUse from "./Components/PlasticUse.js";
 import Transportation from "./Components/Transportation.js";
 import { useState } from "react";
+import './App.css';
+import Login from './Components/Login';
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
     const [question1, setQuestion1] = useState("");
@@ -21,6 +25,22 @@ function App() {
                 {displayedQuestion}
             </div>
         );
+
+
+
+
+
+
+function App() {
+  return (
+    <ChakraProvider>
+    <div>
+    
+<Login/> 
+    </div>
+    </ChakraProvider>
+  );
+
 }
 
 export default App;
