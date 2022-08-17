@@ -10,10 +10,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from './Components/Profile.js'
 import Results from "./Components/Results";
 
+//car 0  bicycle = 20 walk = 20 public trasport = 10  
+//Plasti used? 0  , not used? 10
 function App() {
-  const [question1, setQuestion1] = useState("");
-  const [question2, setQuestion2] = useState("");
-  const [results, setResults] = useState("")
+  const [question1, setQuestion1] = useState(0);
+  const [question2, setQuestion2] = useState(0);
+  const [results, setResults] = useState(0)
  
   return (
     <ChakraProvider>
