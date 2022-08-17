@@ -1,27 +1,23 @@
 import React from "react";
-import { FaBeer, MdOutlineFastfood, MdOutlineNoFood } from "react-icons/fa";
-import { logo } from "../Images/econator.png";
+import { FaUserAlt } from "react-icons/fa";
+import logo from "../Images/econator.png";
+import noplastic from "../Images/noplastic.png";
+import plastic from "../Images/plastic.png";
 
-class Question extends React.Component {
-    render() {
-        return (
-            <>
-                {" "}
-                <FaRegUser />{" "}
-            </>
-        );
-    }
-}
-
-export default function PlasticUse() {
+export default class PlasticUse extends React.Component {
+  render() {
     return (
+      <>
         <div>
-            PlasticUse <img src={logo} />
-            <FaRegUser />
-            <div>
-                <p>Did you use single use plastic today ?</p>
-                {/* <MdOutlineFastfood /> <MdOutlineNoFood /> */}
-            </div>
+          <img className="logo" src={logo} />
+          <FaUserAlt className="userIcon" />
+          <p className="text">Did you use single use plastic today ?</p>
+          <div className="options">
+            <img className="plastic" src={plastic} />
+            <img className="noplastic" src={noplastic} />
+          </div>
         </div>
+      </>
     );
+  }
 }
