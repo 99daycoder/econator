@@ -7,7 +7,9 @@ import plastic from "../Images/plastic.png";
 
 export default class PlasticUse extends React.Component {
   render() {
-
+    function handleClick () {
+        this.props.setQuestion1("plastic")
+    }
     return (
       <>
         <div>
@@ -15,7 +17,7 @@ export default class PlasticUse extends React.Component {
           <FaUserAlt className="userIcon" />
           <p className="text">Did you use single use plastic today ?</p>
           <div className="options">
-            <img className="plastic" src={plastic} onClick= />
+            <img className="plastic" src={plastic} onClick= {handleClick}/>
             <img className="noplastic" src={noplastic} />
           </div>
         </div>
