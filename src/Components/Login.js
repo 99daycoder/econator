@@ -1,106 +1,77 @@
-import { useState } from "react";
 import {
-  Flex,
-  Heading,
-  Input,
-  Button,
-  InputGroup,
-  Stack,
-  InputLeftElement,
-  chakra,
-  Box,
-  Link,
-  Avatar,
-  FormControl,
-  FormHelperText,
-  InputRightElement
-} from "@chakra-ui/react";
-import { FaUserAlt, FaLock } from "react-icons/fa";
+    Box,
+    Center,
+    Text,
+    Stack,
+    List,
+    ListItem,
+    ListIcon,
+    Button,
+    useColorModeValue,
+  } from '@chakra-ui/react';
+  import { CheckIcon } from '@chakra-ui/icons';
+  import { useAuth0 } from "@auth0/auth0-react";
+  
 
-const CFaUserAlt = chakra(FaUserAlt);
-const CFaLock = chakra(FaLock);
-
-const App = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const handleShowClick = () => setShowPassword(!showPassword);
-
-  return (
-    <Flex
-      flexDirection="column"
-      width="100wh"
-      height="100vh"
-      backgroundColor="gray.200"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Stack
-        flexDir="column"
-        mb="2"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Avatar bg="teal.500" />
-        <Heading color="teal.400">Welcome</Heading>
-        <Box minW={{ base: "90%", md: "468px" }}>
-          <form>
-            <Stack
-              spacing={4}
-              p="1rem"
-              backgroundColor="whiteAlpha.900"
-              boxShadow="md"
-            >
-              <FormControl>
-                <InputGroup>
-                  <InputLeftElement
-                    pointerEvents="none"
-                    children={<CFaUserAlt color="gray.300" />}
-                  />
-                  <Input type="email" placeholder="email address" />
-                </InputGroup>
-              </FormControl>
-              <FormControl>
-                <InputGroup>
-                  <InputLeftElement
-                    pointerEvents="none"
-                    color="gray.300"
-                    children={<CFaLock color="gray.300" />}
-                  />
-                  <Input
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Password"
-                  />
-                  <InputRightElement width="4.5rem">
-                    <Button h="1.75rem" size="sm" onClick={handleShowClick}>
-                      {showPassword ? "Hide" : "Show"}
-                    </Button>
-                  </InputRightElement>
-                </InputGroup>
-                <FormHelperText textAlign="right">
-                  <Link>forgot password?</Link>
-                </FormHelperText>
-              </FormControl>
-              <Button
-                borderRadius={0}
-                type="submit"
-                variant="solid"
-                colorScheme="teal"
-                width="full"
+  import logo from './econator.png'
+  
+  export default function Login() {
+    
+    const { loginWithRedirect, user, isAuthenticated, isLoading } = useAuth0();
+    return ( 
+      <Center py={6}>
+        <Box
+          maxW={'330px'}
+          w={'full'}
+          bg={useColorModeValue('white', 'gray.800')}
+          boxShadow={'2xl'}
+          rounded={'md'}
+          overflow={'hidden'}>
+          <Stack
+            textAlign={'center'}
+            p={6}
+            color={useColorModeValue('gray.800', 'white')}
+            align={'center'}>
+           <Box> <img src={logo} alt="horse" /></Box>
+            <Text>Change the world with small steps, one at a time!</Text>
+          </Stack>
+  
+          <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
+            
+            <Button
+              mt={10}
+              w={'full'}
+              bg={'#6D9B51'}
+              color={'white'}
+              rounded={'xl'}
+              boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+              _hover={{
+                bg: 'green.500',
+              }}
+              _focus={{
+                bg: 'green.500',
+              }}
+              onClick={() => loginWithRedirect()}
               >
-                Login
-              </Button>
-            </Stack>
-          </form>
-        </Box>
-      </Stack>
-      <Box>
-        New to us?{" "}
-        <Link color="teal.500" href="#">
-          Sign Up
-        </Link>
-      </Box>
-    </Flex>
-  );
-};
+Login            </Button>
 
-export default App;
+<Button
+              mt={10}
+              w={'full'}
+              bg={'#D9D9D9'}
+              color={'white'}
+              rounded={'xl'}
+              boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+              _hover={{
+                bg: 'green.500',
+              }}
+              _focus={{
+                bg: 'green.500',
+              }}>
+Signup Free            </Button>
+          </Box>
+        </Box>
+      </Center>
+      
+    );
+  }
