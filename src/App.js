@@ -24,7 +24,7 @@ function App() {
         <Route path="plastic" element={<PlasticUse setQuestion1={setQuestion1} question1={question1}/>} />
         <Route path="profile" element={<Profile  /> } />
         <Route path="transportation" element={<Transportation question2={question2} setQuestion2={setQuestion2} />} />
-        <Route path="results" element={<Results results={results} setResults={setResults} />} />
+        <Route path="results" element={<Results results={results} setResults={setResults} setQuestion1={setQuestion1} question1={question1} question2={question2} setQuestion2={setQuestion2}/>} />
       </Routes>
     </ChakraProvider>
   );
