@@ -13,13 +13,33 @@ import {
   } from '@chakra-ui/react';
   import { CheckIcon } from '@chakra-ui/icons';
   import { useAuth0 } from "@auth0/auth0-react";
-  
+  import { useNavigate } from "react-router-dom";
 
   import logo from './econator.png'
+import { useEffect } from 'react';
   
   export default function Login() {
+    const { loginWithRedirect } = useAuth0();
+
+
+     
+// console.log('is authenticated', isAuthenticated)
+
+  
+//   let navigate = useNavigate(); 
+  
+//     function newPage(){
+  
+//   console.log('clickyyyyy')
+//  let path = `/transportation`; 
+//   navigate(path);
+  
+// }
+
+//  if (isAuthenticated === true) {newPage() } 
+
+
     
-    const { loginWithRedirect, user, isAuthenticated, isLoading } = useAuth0();
     return ( 
       <Center py={6}>
         <Box
